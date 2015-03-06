@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE web-app
+ PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>cn.seu.bingluo.controller.MyFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+ 	</filter-mapping>
+
+	<servlet>
+		<servlet-name>autumnServlet</servlet-name>
+		<servlet-class>cn.seu.bingluo.AutumnDispatcher</servlet-class>
+		<init-param>
+			<param-name>packageName</param-name>
+			<param-value>cn.seu.bingluo.controller</param-value>
+		</init-param>
+		<init-param>
+			<param-name>view</param-name>
+			<param-value>cn.seu.bingluo.view.JspView</param-value>
+		</init-param>
+		<init-param>
+			<param-name>resource</param-name>
+			<param-value>/static/*</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>autumnServlet</servlet-name>
+		<url-pattern>/servlet/*</url-pattern>
+	</servlet-mapping>
+</web-app>

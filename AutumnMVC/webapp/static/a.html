@@ -1,0 +1,30 @@
+<html>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+  <head>
+  <title>TEST</title>
+  <script type="text/javascript">
+  function hello1(){
+    var d = new Date();
+    var str = "Hello World - One./n/nIt is ";
+    alert( str + d.toString() );
+  }
+</script>
+<script type="text/javascript" src="/static/hello2.js"></script>
+  </head>
+  <body>
+  	<form action="/servlet/haha" method="POST">
+  		<input type="password" name="password" />
+		<input type="submit" />
+	</form>
+	<form action="/servlet/hehe" method="GET">
+		<input type="text" name="username" />
+		<input type="submit" />
+	</form>
+	<form action="/servlet/hehe" method="post">
+		<input type="text" name="username" />
+		<input type="submit" />
+	</form>
+    <input type="button" onclick="hello1()" value="Hello 1" />
+    <input type="button" onclick="hello2('hey hey')" value="Hello 2" />
+  </body>
+</html>
